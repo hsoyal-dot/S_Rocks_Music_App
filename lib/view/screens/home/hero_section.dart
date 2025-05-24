@@ -16,15 +16,14 @@ class HeroSection extends StatelessWidget {
             Align(
               alignment: Alignment.bottomLeft,
               child: Transform.translate(
-                offset: const Offset(-48, 65), // ⬅️ positive Y moves it down
+                offset: const Offset(-48, 65),
                 child: Image.asset(AppImages.disc, height: 121, width: 121),
               ),
             ),
             Align(
               alignment: Alignment.bottomRight,
               child: Transform.translate(
-                offset: const Offset(63, 52), // ⬅️ adjust to position correctly
-                // child: Image.asset(AppImages.piano, height: 121, width: 121),
+                offset: const Offset(63, 52),
                 child: Image.asset(AppImages.piano, height: 135, width: 135),
               ),
             ),

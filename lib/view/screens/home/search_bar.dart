@@ -43,8 +43,8 @@ class TopBar extends StatelessWidget {
         ),
         const SizedBox(width: 15),
         CircleAvatar(
-          radius: 20, // adjust as needed
-          backgroundColor: Colors.white, // or any background color
+          radius: 20,
+          backgroundColor: Colors.white,
           child: SvgPicture.asset(AppVectors.avatar, width: 24, height: 24),
         ),
       ],
