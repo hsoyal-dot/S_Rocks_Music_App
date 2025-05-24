@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "819057250674",
+    "project_id": "s-rocks-music-db",
+    "storage_bucket": "s-rocks-music-db.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819057250674:android:9d10b351d7607f9761cdeb",
+        "android_client_info": {
+          "package_name": "com.example.s_rocks_music_homepage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtvS8qBGLO87IBynd9UDSlXyfjS_E6pP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
