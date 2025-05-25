@@ -36,35 +36,37 @@ class _BottomNavBarState extends State<BottomNavBar> {
             splashFactory: NoSplash.splashFactory,
             highlightColor: Colors.transparent,
           ),
-          child: BottomNavigationBar(
-            currentIndex: _currentIndex,
-            onTap: (index) {
-              setState(() => _currentIndex = index);
-            },
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            selectedItemColor: Colors.white,
-            unselectedItemColor: const Color.fromRGBO(97, 97, 107, 1),
-            type: BottomNavigationBarType.fixed,
-            items: [
-              BottomNavigationBarItem(
-                icon: _buildNavIcon(AppImages.home, 0),
-                // icon: _buildNavIcon(AppVectors.home, 0),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: _buildNavIcon(AppVectors.news, 1),
-                label: 'News',
-              ),
-              BottomNavigationBarItem(
-                icon: _buildNavIcon(AppVectors.trackbox, 2),
-                label: 'TrackBox',
-              ),
-              BottomNavigationBarItem(
-                icon: _buildNavIcon(AppVectors.projects, 3),
-                label: 'Projects',
-              ),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+            child: BottomNavigationBar(
+              currentIndex: _currentIndex,
+              onTap: (index) {
+                setState(() => _currentIndex = index);
+              },
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              selectedItemColor: Colors.white,
+              unselectedItemColor: const Color.fromRGBO(97, 97, 107, 1),
+              type: BottomNavigationBarType.fixed,
+              items: [
+                BottomNavigationBarItem(
+                  icon: _buildNavIcon(AppImages.home, 0),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: _buildNavIcon(AppVectors.news, 1),
+                  label: 'News',
+                ),
+                BottomNavigationBarItem(
+                  icon: _buildNavIcon(AppVectors.trackbox, 2),
+                  label: 'TrackBox',
+                ),
+                BottomNavigationBarItem(
+                  icon: _buildNavIcon(AppVectors.projects, 3),
+                  label: 'Projects',
+                ),
+              ],
+            ),
           ),
         ),
       ),

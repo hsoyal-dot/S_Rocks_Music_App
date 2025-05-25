@@ -68,7 +68,10 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 24),
-                      ServiceSection(),
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(14,0,14,0),
+                        child: ServiceSection()
+                        ),
                     ],
                   ),
                 ),
