@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:s_rocks_music_homepage/core/assets/app_images.dart';
 import 'package:s_rocks_music_homepage/view/screens/home/viewmodels/service_view_model.dart';
@@ -57,30 +58,37 @@ void initState(){
                 },
                 child: Container(
                   margin: const EdgeInsets.only(bottom: 16),
-                  padding: const EdgeInsets.all(16),
+                  // padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: const Color.fromRGBO(30, 30, 36, 1),
+                    borderRadius: BorderRadius.circular(14),
+                    border: Border.all(
+                      color: const Color.fromRGBO(44, 45, 49, 1),
+                      width: 1.0,
+                    ),
+                    color: const Color.fromRGBO(32, 33, 38, 1),
                     image: DecorationImage(
                       image: AssetImage(service.bgImg),
                       fit: BoxFit.cover,
-                      opacity: 0.2,
+                      opacity: 0.1,
                     ),
                   ),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        height: 48,
-                        width: 48,
-                        padding: const EdgeInsets.all(8),
+                        height: 49,
+                        width: 49,
+                        padding: const EdgeInsets.all(0),
                         decoration: BoxDecoration(
-                          color: const Color.fromRGBO(47, 47, 57, 1),
+                          // color: const Color.fromRGBO(47, 47, 57, 1),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: SvgPicture.asset(
                           service.iconAsset,
                           fit: BoxFit.contain,
+                          height: 57,
+                          width: 56,
                         ),
                       ),
                       const SizedBox(width: 12),
@@ -90,16 +98,15 @@ void initState(){
                           children: [
                             Text(
                               service.title,
-                              style: const TextStyle(
+                              style: GoogleFonts.syne(
                                 fontWeight: FontWeight.w700,
-                                fontSize: 16,
+                                fontSize: 15,
                                 color: Colors.white,
                               ),
                             ),
-                            const SizedBox(height: 4),
                             Text(
                               service.description,
-                              style: const TextStyle(
+                              style: GoogleFonts.syne(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 13,
                                 color: Color.fromRGBO(200, 200, 210, 1),
@@ -110,8 +117,8 @@ void initState(){
                       ),
                       Image.asset(
                         AppImages.rightarrow,
-                        height: 16,
-                        width: 16,
+                        height: 33,
+                        width: 33,
                         color: Colors.white,
                       ),
                     ],
