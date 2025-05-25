@@ -1,12 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'package:provider/provider.dart';
-import 'package:s_rocks_music_homepage/core/di/service_locator.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+import 'core/di/service_locator.dart';
+import 'core/services/firestore_services.dart';
 import 'view/screens/home/home_screen.dart';
 import 'view/screens/home/home_view_model.dart';
+import 'view/screens/home/viewmodels/service_view_model.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   setupLocator();
-  runApp(const MyApp());
+
+  runApp(
+    MultiProvider(
+      providers: [
+        Provider<FirestoreService>(
+          create: (_) => FirestoreService(FirebaseFirestore.instance),
+        ),
+        ChangeNotifierProvider(create: (_) => sl<HomeViewModel>()),
+        ChangeNotifierProxyProvider<FirestoreService, ServiceViewModel>(
+          create: (context) => ServiceViewModel(context.read<FirestoreService>()),
+          update: (context, firestoreService, previous) =>
+              ServiceViewModel(firestoreService),
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -14,18 +42,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => locator<HomeViewModel>()),
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'S.Rocks Music',
-        theme: ThemeData(
-          useMaterial3: true,
-        ),
-        home: const HomeScreen(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'S.Rocks Music',
+      theme: ThemeData(
+        useMaterial3: true,
       ),
+      home: const HomeScreen(),
     );
   }
 }

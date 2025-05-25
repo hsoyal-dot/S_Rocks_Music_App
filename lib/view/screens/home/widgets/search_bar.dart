@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:s_rocks_music_homepage/core/assets/app_images.dart';
 import 'package:s_rocks_music_homepage/core/assets/app_vectors.dart';
 
 class TopBar extends StatelessWidget {
@@ -44,8 +45,8 @@ class TopBar extends StatelessWidget {
         const SizedBox(width: 15),
         CircleAvatar(
           radius: 20,
-          backgroundColor: Colors.white,
-          child: SvgPicture.asset(AppVectors.avatar, width: 24, height: 24),
+          child:
+              Image.asset(AppImages.avatar, width: 34, height: 34),
         ),
       ],
     );
