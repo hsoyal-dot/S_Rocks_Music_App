@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:s_rocks_music_homepage/core/services/firestore_services.dart';
-import 'package:s_rocks_music_homepage/data/models/service_model.dart';
+import 'package:s_rocks_music_homepage/data/models/home/service_model.dart';
 
 class ServiceViewModel extends ChangeNotifier {
   final FirestoreService _firestoreService;
@@ -22,6 +22,9 @@ class ServiceViewModel extends ChangeNotifier {
     try {
       _services = await _firestoreService.fetchServices();
       _error = null;
+      print("Fetching services...");
+      print("Data: ${_services.length} services loaded.");
+
     } catch (e) {
       _error = e.toString();
     }

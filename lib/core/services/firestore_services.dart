@@ -1,6 +1,6 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:s_rocks_music_homepage/data/models/service_model.dart';
+import 'package:s_rocks_music_homepage/data/models/home/service_model.dart';
 
 
 class FirestoreService {

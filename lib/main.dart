@@ -1,21 +1,31 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'package:provider/provider.dart';
-import 'package:s_rocks_music_homepage/core/di/service_locator.dart';
-import 'package:s_rocks_music_homepage/core/services/firestore_services.dart';
-import 'package:s_rocks_music_homepage/view/screens/home/viewmodels/service_view_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+import 'core/di/service_locator.dart';
+import 'core/services/firestore_services.dart';
 import 'view/screens/home/home_screen.dart';
 import 'view/screens/home/home_view_model.dart';
+import 'view/screens/home/viewmodels/service_view_model.dart';
 
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-void main() {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   setupLocator();
+
   runApp(
     MultiProvider(
       providers: [
         Provider<FirestoreService>(
           create: (_) => FirestoreService(FirebaseFirestore.instance),
         ),
+        ChangeNotifierProvider(create: (_) => sl<HomeViewModel>()),
         ChangeNotifierProxyProvider<FirestoreService, ServiceViewModel>(
           create: (context) => ServiceViewModel(context.read<FirestoreService>()),
           update: (context, firestoreService, previous) =>
@@ -32,18 +42,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => sl<HomeViewModel>()),
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'S.Rocks Music',
-        theme: ThemeData(
-          useMaterial3: true,
-        ),
-        home: const HomeScreen(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'S.Rocks Music',
+      theme: ThemeData(
+        useMaterial3: true,
       ),
+      home: const HomeScreen(),
     );
   }
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:s_rocks_music_homepage/view/screens/home/bottom_nav_bar.dart';
+import 'package:s_rocks_music_homepage/view/screens/home/service_section.dart';
+import 'package:s_rocks_music_homepage/view/screens/home/widgets/bottom_nav_bar.dart';
 import 'package:s_rocks_music_homepage/view/screens/home/hero_section.dart';
-import 'package:s_rocks_music_homepage/view/screens/home/search_bar.dart';
+import 'package:s_rocks_music_homepage/view/screens/home/widgets/search_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -52,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                   width: double.infinity,
                   padding: const EdgeInsets.symmetric(
                     horizontal: 20,
-                    vertical: 16,
+                    vertical: 24,
                   ),
                   color: const Color.fromRGBO(24, 23, 28, 1),
                   child: Column(
@@ -66,8 +67,8 @@ class HomeScreen extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      const SizedBox(height: 20),
-                      // ServiceSection(),
+                      const SizedBox(height: 24),
+                      ServiceSection(),
                     ],
                   ),
                 ),

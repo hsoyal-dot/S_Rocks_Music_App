@@ -8,7 +8,7 @@ import 'package:s_rocks_music_homepage/view/screens/home/viewmodels/service_view
 final sl = GetIt.instance;
 
 void setupLocator() {
-  sl.registerLazySingleton(() => HomeViewModel());
+  // sl.registerLazySingleton(() => HomeViewModel());
   sl.registerLazySingleton(() => FirebaseFirestore.instance);
   sl.registerLazySingleton(() => FirestoreService(sl()));
   sl.registerFactory(() => HomeViewModel());
