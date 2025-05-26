@@ -50,6 +50,15 @@ lib/
 
 ---
 
+## 📋 Project Planning & Task Tracking
+
+- Development of this application was structured and tracked using an **Agile Workflow (JIRA)** to ensure clarity across all phases — from designing to feature implementation.
+- Tasks, bugs, and enhancements were managed on a dedicated **Project Board**, helping maintain consistent progress and better **sprint planning**.
+
+🔗 [View the project board](https://hsdot.atlassian.net/jira/software/projects/MSM/boards/67)
+
+---
+
 ## ➡️ Coming Next
 
 - Routing for each bottom navigation item (`News`, `TrackBox`, `Projects`)
