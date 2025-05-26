@@ -7,4 +7,5 @@ class AppImages {
   static const String home = '${basePath}home$pngFormat';
   static const String avatar = '${basePath}avatar$pngFormat';
   static const String rightarrow = '${basePath}arrow$pngFormat';
+  static const String appLogo = '${basePath}app_logo$pngFormat';
 }

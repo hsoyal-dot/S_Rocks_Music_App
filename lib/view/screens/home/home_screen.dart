@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       extendBody: true,
       backgroundColor: const Color.fromRGBO(24, 23, 28, 1),
       bottomNavigationBar: BottomNavBar(),

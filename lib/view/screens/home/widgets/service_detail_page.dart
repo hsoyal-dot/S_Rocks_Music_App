@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ServiceDetailPage extends StatelessWidget {
   final String serviceTitle;
@@ -15,7 +16,7 @@ class ServiceDetailPage extends StatelessWidget {
       body: Center(
         child: Text(
           'You Tapped on: $serviceTitle',
-          style: const TextStyle(color: Colors.white, fontSize: 18),
+          style: GoogleFonts.syne(color: Colors.white, fontSize: 18),
           textAlign: TextAlign.center,
         ),
       ),

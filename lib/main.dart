@@ -1,12 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
-import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:s_rocks_music_homepage/view/screens/splash/splash_screen.dart';
 
 import 'core/di/service_locator.dart';
 import 'core/services/firestore_services.dart';
-import 'view/screens/home/home_screen.dart';
+import 'firebase_options.dart';
 import 'view/screens/home/home_view_model.dart';
 import 'view/screens/home/viewmodels/service_view_model.dart';
 
@@ -44,11 +44,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'S.Rocks Music',
+      title: 'S Rocks Music',
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const SplashPage(),
     );
   }
 }
