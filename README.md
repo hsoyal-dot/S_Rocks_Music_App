@@ -1,7 +1,7 @@
 # S.Rocks Music App (Home Page Module)
 
 This Flutter project is the **Home Page UI** module for the S.Rocks Music App. It follows a scalable architecture using **MVVM**, **Provider for state management**, **Firebase Firestore** for dynamic data, and **Dependency Injection** for service access.
-
+- [HomePage Preview](https://drive.google.com/file/d/1TShYuF5jPEDZv5J_mpf3AyNYlIDdWld5/view?usp=drive_link)
 ---
 
 ## 📁 Folder Structure Overview
